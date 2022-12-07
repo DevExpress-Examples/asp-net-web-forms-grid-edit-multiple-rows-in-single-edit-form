@@ -8,7 +8,7 @@ Imports System.Web.UI
 Imports System.Web.UI.WebControls
 Imports System.Web.UI.WebControls.WebParts
 Imports System.Web.UI.HtmlControls
-Imports DevExpress.Web.ASPxGridView
+Imports DevExpress.Web
 Imports System.Collections.Generic
 
 Partial Public Class _Default
@@ -39,7 +39,7 @@ Partial Public Class _Default
 		Return dataTable
 	End Function
 
-	Protected Sub ASPxGridView1_CustomCallback(ByVal sender As Object, ByVal e As DevExpress.Web.ASPxGridView.ASPxGridViewCustomCallbackEventArgs)
+	Protected Sub ASPxGridView1_CustomCallback(ByVal sender As Object, ByVal e As DevExpress.Web.ASPxGridViewCustomCallbackEventArgs)
 		Dim grid As ASPxGridView = TryCast(sender, ASPxGridView)
 		'Switch the grid to edit mode for the last selected row
 		If e.Parameters = "StartEditing" Then
@@ -53,7 +53,7 @@ Partial Public Class _Default
 		isEditing = True
 	End Sub
 
-	Protected Sub ASPxGridView1_CellEditorInitialize(ByVal sender As Object, ByVal e As DevExpress.Web.ASPxGridView.ASPxGridViewEditorEventArgs)
+	Protected Sub ASPxGridView1_CellEditorInitialize(ByVal sender As Object, ByVal e As DevExpress.Web.ASPxGridViewEditorEventArgs)
 		Dim grid As ASPxGridView = TryCast(sender, ASPxGridView)
 		'Make sure that the code initializing editor values in EditForm is executed only once - when switching the grid to edit mode
 		If Not(grid.IsEditing AndAlso isEditing) Then
@@ -71,7 +71,7 @@ Partial Public Class _Default
 
 	End Sub
 
-	Private Function IsCommonValueForAllSelectedRows(ByVal column As DevExpress.Web.ASPxGridView.GridViewDataColumn, ByVal value As Object) As Boolean
+	Private Function IsCommonValueForAllSelectedRows(ByVal column As DevExpress.Web.GridViewDataColumn, ByVal value As Object) As Boolean
 		'Determine whether the passed value is common for all rows within the specified column
 		Dim res As Boolean = True
 		Dim selectedRowValues As List(Of Object) = ASPxGridView1.GetSelectedFieldValues(column.FieldName)

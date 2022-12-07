@@ -7,7 +7,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Web.UI.WebControls.WebParts;
 using System.Web.UI.HtmlControls;
-using DevExpress.Web.ASPxGridView;
+using DevExpress.Web;
 using System.Collections.Generic;
 
 public partial class _Default : System.Web.UI.Page 
@@ -37,7 +37,7 @@ public partial class _Default : System.Web.UI.Page
         return dataTable;
     }
 
-    protected void ASPxGridView1_CustomCallback(object sender, DevExpress.Web.ASPxGridView.ASPxGridViewCustomCallbackEventArgs e){
+    protected void ASPxGridView1_CustomCallback(object sender, DevExpress.Web.ASPxGridViewCustomCallbackEventArgs e){
         ASPxGridView grid = sender as ASPxGridView;
         //Switch the grid to edit mode for the last selected row
         if (e.Parameters == "StartEditing"){
@@ -51,7 +51,7 @@ public partial class _Default : System.Web.UI.Page
         isEditing = true;
     }
 
-    protected void ASPxGridView1_CellEditorInitialize(object sender, DevExpress.Web.ASPxGridView.ASPxGridViewEditorEventArgs e){
+    protected void ASPxGridView1_CellEditorInitialize(object sender, DevExpress.Web.ASPxGridViewEditorEventArgs e){
         ASPxGridView grid = sender as ASPxGridView;
         //Make sure that the code initializing editor values in EditForm is executed only once - when switching the grid to edit mode
         if (!(grid.IsEditing && isEditing)) return;
@@ -61,7 +61,7 @@ public partial class _Default : System.Web.UI.Page
 
     }
 
-    private bool IsCommonValueForAllSelectedRows(DevExpress.Web.ASPxGridView.GridViewDataColumn column, object value){
+    private bool IsCommonValueForAllSelectedRows(DevExpress.Web.GridViewDataColumn column, object value){
         //Determine whether the passed value is common for all rows within the specified column
         bool res = true;
         List<object> selectedRowValues = ASPxGridView1.GetSelectedFieldValues(column.FieldName);
