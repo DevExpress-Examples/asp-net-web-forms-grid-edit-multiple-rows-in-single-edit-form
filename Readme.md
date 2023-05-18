@@ -5,7 +5,7 @@
 <!-- default badges end -->
 # Grid View for ASP.NET Web Forms - How to edit multiple selected rows in a single edit form
 <!-- run online -->
-**[[Run Online]](https://codecentral.devexpress.com/e2026/)**
+**[[Run Online]](https://codecentral.devexpress.com/128533988/)**
 <!-- run online end -->
 
 This example demonstrates how to configure the grid's cell edit functionality to allow a user to edit multiple selected rows in a single edit form.
