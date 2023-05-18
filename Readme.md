@@ -12,7 +12,7 @@ This example demonstrates how to configure the grid's cell edit functionality to
 Create the [Grid View](https://docs.devexpress.com/AspNet/DevExpress.Web.ASPxGridView) control and add a button to the page. Handle the button's client-side `Click` event and do the following in the handler:
 
 * Call the grid's [GetSelectedRowCount](https://docs.devexpress.com/AspNet/js-ASPxClientGridView.GetSelectedRowCount) method to determine whether any grid rows are selected.
-* Call the grid's `PerformCallback` method to send a callback to the server with a custom parameter (**IsEditing**).
+* Call the grid's `PerformCallback` method to send a callback to the server with a custom parameter (**StartEditing**).
 
 ```aspx
 <dx:ASPxGridView id="ASPxGridView1" runat="server" AutoGenerateColumns="False" ClientInstanceName="grid" KeyFieldName="ID" OnCellEditorInitialize="ASPxGridView1_CellEditorInitialize" OnCustomCallback="ASPxGridView1_CustomCallback" OnRowUpdating="ASPxGridView1_RowUpdating" OnStartRowEditing="ASPxGridView1_StartRowEditing">
